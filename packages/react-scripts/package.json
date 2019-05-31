@@ -24,6 +24,7 @@
     "utils"
   ],
   "scripts": {
+    "get-aws-env": "as-aws-get-params --with-decryption",
     "release": "standard-version"
   },
   "bin": {
@@ -88,7 +89,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "devDependencies": {
-    "@amplified/node-scripts": "0.1.0",
+    "@amplified/node-scripts": "0.2.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
