@@ -31,6 +31,7 @@ blocks:
           # Correct premissions since they are too open by default:
           - checkout
           - sh .semaphore/branch-guard.sh master
+          - git checkout master
           - cd packages/react-scripts
           - cache restore node-cache-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)
           - eval "$(node ./node_modules/.bin/as-aws-get-params --with-decryption)"
