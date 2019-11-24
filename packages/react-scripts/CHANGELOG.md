@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/amplifiedai/create-react-app/compare/3.0.1X0.9.0...0.10.0) (2019-11-24)
+
+
+### Features
+
+* update package-lock ([123d788](https://github.com/amplifiedai/create-react-app/commit/123d788))
+
+
+
 ## [0.9.0](https://github.com/amplifiedai/create-react-app/compare/3.0.1X0.8.0...0.9.0) (2019-09-20)
 
 
