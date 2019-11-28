@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.11.0](https://github.com/amplifiedai/create-react-app/compare/3.0.1X0.10.0...0.11.0) (2019-11-28)
+
+
+### Features
+
+* use react-hot-dom in development mode ([2ea2af4](https://github.com/amplifiedai/create-react-app/commit/2ea2af4))
+
+
+
 ## [0.10.0](https://github.com/amplifiedai/create-react-app/compare/3.0.1X0.9.0...0.10.0) (2019-11-24)
 
 
