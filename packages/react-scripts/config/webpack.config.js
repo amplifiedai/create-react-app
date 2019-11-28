@@ -315,6 +315,10 @@ module.exports = function(webpackEnv, bsOptions) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        // react hot loader dom
+        ...(isEnvDevelopment && {
+          'react-dom': '@hot-loader/react-dom'
+        }),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
