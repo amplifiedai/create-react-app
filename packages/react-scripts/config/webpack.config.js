@@ -39,6 +39,7 @@ const eslint = require('eslint');
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
 const postcssNormalize = require('postcss-normalize');
+const tailwindcss = require('tailwindcss');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -113,6 +114,7 @@ module.exports = function(webpackEnv, bsOptions) {
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
           plugins: () => [
+            tailwindcss(paths.appTailwindConfig),
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
