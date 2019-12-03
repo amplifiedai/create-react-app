@@ -40,6 +40,7 @@ const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
 const postcssNormalize = require('postcss-normalize');
 const tailwindcss = require('tailwindcss');
+const purgecss = require('@fullhuman/postcss-purgecss');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -61,6 +62,18 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+
+// Tailwind minimise
+const purgecssOptions = {
+  // Specify the paths to all of the template files in your project 
+  content: [
+    `./${paths.appSrc}/**/*.html`,
+    `./${paths.appSrc}/**/*.${useTypeScript ? 'tsx' : 'jsx'}`
+  ],
+
+  // Include any special characters you're using in this regular expression
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+}
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -115,6 +128,7 @@ module.exports = function(webpackEnv, bsOptions) {
           ident: 'postcss',
           plugins: () => [
             tailwindcss(paths.appTailwindConfig),
+            ...(isEnvDevelopment ? [] : [purgecss(purgecssOptions)]),
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
