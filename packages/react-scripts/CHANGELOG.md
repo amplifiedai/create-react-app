@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.15.0](https://github.com/facebook/create-react-app/compare/3.2.0X0.14.0...0.15.0) (2019-12-03)
+
+
+### Features
+
+* minimise tailwind and add default tailwind config to template ([b2e5271](https://github.com/facebook/create-react-app/commit/b2e5271))
+
+
+
 ## [0.14.0](https://github.com/facebook/create-react-app/compare/3.2.0X0.13.0...0.14.0) (2019-12-01)
 
 
