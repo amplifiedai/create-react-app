@@ -64,17 +64,28 @@ const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 // Tailwind minimise
-const purgecssOptions = {
-  // Specify the paths to all of the template files in your project 
-  content: [
-    `${paths.appSrc}/**/*.html`,
-    `${paths.appSrc}/**/*.${useTypeScript ? 'tsx' : 'jsx'}`
-  ],
+const purgecssOptions = (() => {
+  const useAppPurgeCssOptions = fs.existsSync(paths.appPurgeCssConfig);
+  const basePurgeCssOptions = {
+    // Specify the paths to all of the template files in your project
+    content: [
+      `${paths.appSrc}/**/*.html`,
+      `${paths.appSrc}/**/*.${useTypeScript ? 'tsx' : 'jsx'}`
+    ],
 
-  // Include any special characters you're using in this regular expression
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-}
+    // Include any special characters you're using in this regular expression
+    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+  }
 
+  if (useAppPurgeCssOptions) {
+    return {
+      ...basePurgeCssOptions,
+      ...require(paths.appPurgeCssConfig)
+    }
+  }
+
+  return basePurgeCssOptions;
+})();
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv, bsOptions) {
