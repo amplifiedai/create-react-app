@@ -67,8 +67,8 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 const purgecssOptions = {
   // Specify the paths to all of the template files in your project 
   content: [
-    `./${paths.appSrc}/**/*.html`,
-    `./${paths.appSrc}/**/*.${useTypeScript ? 'tsx' : 'jsx'}`
+    `${paths.appSrc}/**/*.html`,
+    `${paths.appSrc}/**/*.${useTypeScript ? 'tsx' : 'jsx'}`
   ],
 
   // Include any special characters you're using in this regular expression
