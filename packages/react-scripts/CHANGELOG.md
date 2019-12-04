@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.16.0](https://github.com/facebook/create-react-app/compare/3.2.0X0.15.0...0.16.0) (2019-12-04)
+
+
+### Bug Fixes
+
+* use correct path comparison for purgecss ([e6e8135](https://github.com/facebook/create-react-app/commit/e6e8135))
+
+
+
 ## [0.15.0](https://github.com/facebook/create-react-app/compare/3.2.0X0.14.0...0.15.0) (2019-12-03)
 
 
